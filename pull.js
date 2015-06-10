@@ -40,10 +40,11 @@ function pullHandler (event, type) {
 
 function addPull (el, handler) {
     scrollHandler = handler;
-    el.addEventListener('touchstart', swipeHandler);
+    el.addEventListener('touchstart', handler);
+    return removePull(handler)
 };
 function removePull (el, handler) {
-    el.removeEventListener('touchstart', swipeHandler);
+    el.removeEventListener('touchstart', handler);
 };
 
 var pull = {
